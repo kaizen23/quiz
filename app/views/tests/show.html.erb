@@ -1,0 +1,36 @@
+<% if notice%>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <%= @test.name %> 
+</p>
+
+ 
+
+
+<%=form_tag(:action => "results") do %>
+    <%= hidden_field_tag("test_id",@test.id) %>
+    <% @questions.each do |question| %>
+
+      <div class = "Question" >
+        <%= question.contents  %>
+      </div>
+	  <%  @question = Question.find(question.id) %>
+ 	  <%  @answers = @question.answers.all%>
+	  
+      <div class="Answers">
+	 <% @answers.each do |answer| %>
+	   <%=radio_button_tag([":question",question.id].join("_"),answer.id) %>
+           <%= answer.content %>
+           <br/>
+         <% end %>
+      </div> 	
+    <% end %>
+	<div class= "wynik">
+	<%= submit_tag("Wynik",:class => 'btn btn-success btn-large')%>
+	</div>
+<% end %>
+
+
+

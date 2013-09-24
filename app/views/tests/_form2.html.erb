@@ -1,0 +1,40 @@
+<%= form_for([@test,@question]) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contents %><br>
+    <%= f.text_field :contents %>
+  </div>
+  <div class="field">
+    <%= f.label :test_id %><br>
+    <%= f.hidden_field :test_id, :value => @test.id %>
+  </div>
+
+  Answers:
+  <ul>
+    <%= f.fields_for :answers do |answers_form| %>
+      <li>
+        <%= answers_form.radio_button(:corectness, 1,:name => "@question.id") %>
+        <%= answers_form.label(:corectness, "This answer option is correct") %>       
+      </li>
+      <li>
+        <%= answers_form.label :content %>
+        <%= answers_form.text_field :content %>         
+      </li>
+      
+    <% end %>
+  </ul>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

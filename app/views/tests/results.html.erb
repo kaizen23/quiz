@@ -1,0 +1,37 @@
+ <p><b>Rezultat </b></p>
+ <p><b>Nazwa testu:</b>
+ <%= @test.name %><br/></p>
+ <p><b>Wynik:</b>
+ <%= @counttrue %> na 10 punktów</p>
+<p><b>Procentowo:</b>
+<%=([@percenttrue,"%","poprawnych"].join(" "))%> </p>
+<p>Poniżej poprawne odpowiedzi:</p>
+
+<% @questions.each do |question| %>
+
+      <div class = "Question" >
+        <%= question.contents  %>
+      </div>
+	  <%  @question = Question.find(question.id) %>
+ 	  <%  @answers = @question.answers.all%>
+	  
+      <div class="Answers">
+	 <% @answers.each do |answer| %>
+	    <%= content_tag(:i, '' ,class: 'icon-ok') if answer.corectness %>
+		<% @answer_id_false.each do |answer_id_false| %>
+                  <% if answer.id ==answer_id_false %>
+                    <%= content_tag(:i, '' ,class: 'icon-remove') %>
+		  <% end %>
+	        <% end %>
+
+            <%= answer.content %>
+            <br/>
+         <% end %>
+      </div> 
+
+<% end %>
+
+<div class= "wynik">
+<%= link_to 'Popraw wynik', test_path(@test),:class => 'btn btn-success btn-large' %>
+</div>
+

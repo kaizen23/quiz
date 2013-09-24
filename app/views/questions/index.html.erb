@@ -1,0 +1,34 @@
+<% if notice%>
+<p id="notice"><%= notice %></p>
+<% end %>
+<div class = "lista">
+    <ul class="nav nav-tabs">
+      <%=nav_link 'Testowe pytania', test_questions_path%>
+    </ul>
+<div class = "nadlista">
+<%= link_to 'Dodaj pytanie', new_test_question_path(@test) , :class => 'btn btn-danger btn-small' %>
+</div>
+
+
+
+
+
+      <% @questions.each do |question| %>
+       <div class = "test">
+       <%= question.contents %>
+       
+        <div class = "right">
+
+	<%= link_to 'Edytuj', edit_test_question_path(@test,question) %>
+        <%= link_to 'Usuń', test_question_path(@test,question),method: :delete, data: { confirm: 'Are you sure?' }  %>
+        </div>
+       </div>
+    <% end %>
+
+ 
+
+
+
+
+
+

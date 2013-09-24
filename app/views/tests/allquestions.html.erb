@@ -1,0 +1,13 @@
+<div class = "lista">
+    <ul class="nav nav-tabs">
+      <%=nav_link 'Testy', tests_path%>
+      <%=nav_link 'Pytania', allquestions_tests_path%>
+    </ul>
+ <div class = "nadlista">
+ </div>
+ <% @questions.each do |question| %>
+  <div class = "test">
+   <%= question.contents %>
+  </div>
+ <% end %>
+</div>

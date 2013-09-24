@@ -1,0 +1,127 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; } 
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+@linkColor: black;
+@navbarLinkColor: @white;
+@navbarBackground: @black;
+
+.Question{
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(bottom, #B8B8B8 0%, #FFFFFF 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(bottom, #B8B8B8 0%, #FFFFFF 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(bottom, #B8B8B8 0%, #FFFFFF 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #B8B8B8), color-stop(1, #FFFFFF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(bottom, #B8B8B8 0%, #FFFFFF 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to top, #B8B8B8 0%, #FFFFFF 100%);
+border-style:solid;
+border-width:1px;
+border-color:gray;
+padding-top: 10px; 
+padding-bottom: 10px; 
+padding-left: 10px;
+margin-top: 15px; 
+}
+
+
+
+.Answers{
+border-bottom-style:  dotted;
+border-width:0.5px;
+border-color: @grayLight;
+padding-top: 10px; 
+padding-bottom: 10px; 
+}
+
+.wynik{
+text-align:center;
+padding:10px;
+}
+
+.lista{
+max-height:700px;
+
+border-style:solid;
+margin-top: 30px;
+border-width:0.5px;
+border-color:@grayLight;
+.border-radius(5px);
+overflow-y: auto;
+}
+
+.nadlista
+{text-align:right;
+padding-right:10px;
+padding-top:15px;
+margin-bottom:20px;
+}
+
+.test{
+
+padding:10px;
+background-color:@grayLighter;
+border-top-style:solid;
+border-width:0.5px;
+border-color:@gray;
+}
+
+.test:hover{
+background-color:#E0E0E0 ;
+}
+
+.right{text-align:right;float:right;}
+
+#notice {
+  color :green;
+  height:30px;
+  text-align: center;
+  border-style:dotted;
+  border-width: 2px;
+  border-color: green;	
+}
+
+.field{
+text-align :center;
+padding:10px;}
+
+.actions{
+text-align :center;
+}
+ 
+

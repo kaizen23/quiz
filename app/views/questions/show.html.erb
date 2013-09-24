@@ -1,0 +1,19 @@
+<% if notice%>
+<p id="notice"><%= notice %></p>
+<% end %>
+  <strong>Nazwa testu</strong>
+  <%= @test.name %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @question.contents %>
+</p>
+
+<p>
+  <strong>Test:</strong>
+  <%= @question.test_id %>
+</p>
+
+<%= link_to 'Edit', edit_test_question_path(@test,@question) %> |
+<%= link_to 'Back', test_questions_path %>

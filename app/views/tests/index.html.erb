@@ -1,0 +1,30 @@
+<div class = "lista">
+    <ul class="nav nav-tabs">
+      <%=nav_link 'Testy', tests_path%>
+      <%=nav_link 'Pytania', allquestions_tests_path%>
+    </ul>
+<div class = "nadlista">
+<%= link_to 'Dodaj test', new_test_path , :class => 'btn btn-danger btn-small' %>
+</div>
+
+
+
+
+    <% @tests.each do |test| %>
+       <div class = "test">
+       <%= test.name %>
+       
+        <div class = "right">
+        <%= link_to 'Rozwiąż test', test, :class => 'icon-play-circle' %>
+        <%= link_to 'Edit', edit_test_path(test),:class => 'icon-edit' %>
+        <%= link_to 'Usuń', test, :class => 'icon-trash' ,method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+       </div>
+    <% end %>
+ 
+
+
+<br>
+</div>
+
+
